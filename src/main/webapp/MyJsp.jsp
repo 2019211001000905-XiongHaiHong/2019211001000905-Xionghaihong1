@@ -55,7 +55,7 @@
 <body>
 <a href="index.jsp">go to week1</a><br>
 <form method="gost">
-    Name: XiongHaiHong1</br>
+    Name: XiongHaiHong</br>
     ID: 2019211001000905</br>
     <div id="timeShow" class="time1"></div>
 </form>
