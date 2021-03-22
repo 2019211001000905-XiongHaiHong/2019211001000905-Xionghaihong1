@@ -13,8 +13,7 @@ public class HelloWorldServlet extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
         writer.println("Name : XiongHaiHong \n" +
-                "Id : 2019211001000905\n" +
-                "Date and Time :2021年3月16日21点55分");
+                "Id : 2019211001000905\n" );
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response){
 

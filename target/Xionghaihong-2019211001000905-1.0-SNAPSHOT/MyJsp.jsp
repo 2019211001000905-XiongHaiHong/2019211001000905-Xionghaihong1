@@ -45,7 +45,7 @@
 
         if(s<10){s="0"+s;}
 
-        document.getElementById("timeShow").innerHTML =  "Data and Time："+y+mm+d+weekday[day]+" "+h+":"+m+":"+s+"";
+        document.getElementById("timeShow").innerHTML =  "Data and time："+y+mm+d+weekday[day]+" "+h+":"+m+":"+s+"";
 
         t = setTimeout(time,1000); //设定定时器，循环执行
 
@@ -55,7 +55,7 @@
 <body>
 <a href="index.jsp">go to week1</a><br>
 <form method="gost">
-    Name: XiongHaiHong</br>
+    Name: XiongHaiHong1</br>
     ID: 2019211001000905</br>
     <div id="timeShow" class="time1"></div>
 </form>
