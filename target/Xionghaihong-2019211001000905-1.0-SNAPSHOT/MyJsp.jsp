@@ -1,63 +1,45 @@
 <%--
   Created by IntelliJ IDEA.
-  User: 17939
-  Date: 2021/3/16
-  Time: 19:07
+  User: 86159
+  Date: 2021/3/14
+  Time: 19:44
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>MyJsp</title>
+    <title>Title</title>
 </head>
 <script language="javascript">
-
     var t = null;
-
     t = setTimeout(time,1000);//开始执行
-
     function time()
-
     {
-
         clearTimeout(t);//清除定时器
-
         dt = new Date();
-
         var y=dt.getYear()+1900;
-
         var mm=dt.getMonth()+1;
-
         var d=dt.getDate();
-
-        var weekday=["Sum","Mon","Tue","Wed","Thu","Fri","Sat"];
-
+        var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
         var day=dt.getDay();
-
         var h=dt.getHours();
-
         var m=dt.getMinutes();
-
         var s=dt.getSeconds();
         if(h<10){h="0"+h;}
-
         if(m<10){m="0"+m;}
-
         if(s<10){s="0"+s;}
-
-        document.getElementById("timeShow").innerHTML =  "Data and time："+y+mm+d+weekday[day]+" "+h+":"+m+":"+s+"";
-
+        document.getElementById("timeShow").innerHTML =  "现在的时间为："+y+"年"+mm+"月"+d+"日"+weekday[day]+" "+h+":"+m+":"+s+"";
         t = setTimeout(time,1000); //设定定时器，循环执行
-
     }
-
 </script>
+
 <body>
-<a href="index.jsp">go to week1</a><br>
-<form method="gost">
-    Name: XiongHaiHong1</br>
-    ID: 2019211001000905</br>
+<a href="index.jsp">go to week1</a><!-- method is GET-->
+<form>
+    Name:Xionghaihong</br>
+    Id:2019211001000905</br>
     <div id="timeShow" class="time1"></div>
 </form>
+
 </body>
 </html>
