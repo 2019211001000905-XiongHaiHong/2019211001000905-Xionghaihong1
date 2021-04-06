@@ -43,7 +43,7 @@ public class registerServlet extends HttpServlet {
         try{
             Class.forName(driver);
             con = DriverManager.getConnection(url, username, password);
-            System.out.println("进入数据库init()-->"+con);//成功
+            System.out.println("查看用户信息 init()-->"+con);//成功
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

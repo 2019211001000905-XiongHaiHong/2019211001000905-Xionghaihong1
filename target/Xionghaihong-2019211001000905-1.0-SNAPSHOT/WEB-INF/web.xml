@@ -31,11 +31,7 @@
     </servlet>
 
     <servlet>
-        <servlet-name>registerServlet</servlet-name>
-        <servlet-class>com.week3.demo.registerServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>JDBCdemoServlet</servlet-name>
+        <servlet-name>JDBCDemoServlet</servlet-name>
         <servlet-class>com.week4.demo.JDBCDemoServlet</servlet-class>
         <init-param>
             <param-name>driver</param-name>
@@ -67,8 +63,9 @@
             <param-value>2019211001000905</param-value>
         </init-param>
     </servlet>
+
     <servlet-mapping>
-        <servlet-name>JDBCdemoServlet</servlet-name>
+        <servlet-name>JDBCDemoServlet</servlet-name>
         <url-pattern>/jdbc</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -78,10 +75,6 @@
     <servlet-mapping>
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/life</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>registerServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConfigDemoServlet</servlet-name>
