@@ -37,5 +37,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.7.0" level="project" />
     <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:9.2.1.jre11" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.61" level="application_server_libraries" />
   </component>
 </module>
