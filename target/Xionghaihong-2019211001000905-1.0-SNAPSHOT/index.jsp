@@ -17,7 +17,7 @@
 <a href="config"> Config parameter-week4</a></br>
 <a href="register.jsp">Register JDBC-week4</a></br>
 <a href="index.jsp">include-week5</a></br>
-<a href="login.jsp">login-week5</a></br>
+<a href="Login.jsp">login-week5</a></br>
 <%--<a href="userList.jsp">userList-week6</a></br>--%>
 <%--<a href="userInfo.jsp">userInfo-week6</a></br>--%>
 <%--<a href="redirect">redirect-week6</a></br>--%>

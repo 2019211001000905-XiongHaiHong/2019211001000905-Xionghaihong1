@@ -116,7 +116,7 @@ public class registerServlet extends HttpServlet {
 //            request.setAttribute("name",rs);
 //            request.getRequestDispatcher("userList.jsp").forward(request,response);
 //            System.out.println("跳转页面完成");
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("Login.jsp");
         } catch (Exception e) {
             System.out.println(e);
         }
