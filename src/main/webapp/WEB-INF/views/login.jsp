@@ -1,4 +1,3 @@
-
 <%--
   Created by IntelliJ IDEA.
   User: 86159
@@ -14,10 +13,28 @@
         out.println(request.getAttribute("message"));
     }
 %>
+<%
+    Cookie [] allcookies=request.getCookies();
+    String username="",password="",rememberMevale="";
+    if(allcookies!=null){
+        for(Cookie c:allcookies){
+            if(c.getName().equals("cUsername")){
+                username=c.getValue();
+            }
+            if(c.getName().equals("cPassword")){
+                password=c.getValue();
+            }
+            if(c.getName().equals("cRememberMevale")){
+                rememberMevale=c.getValue();
+            }
+        }
+    }
+%>
 
 <form style="text-align: center;background: deepskyblue" method="post" action="login">
-    <input type="text" name="username" value="" placeholder="username"></br></br>
-    <input type="password" name="password" value="" placeholder="password"></br></br>
+    username:<input type="text" name="username" value="<%=username%>" placeholder="username"></br></br>
+    password:<input type="password" name="password" value="<%=password%>" placeholder="password"></br></br>
+    <input type="checkbox" name="RememberMe" value="1"<%=rememberMevale.equals("1") ?"checked":""%>>RememberMe</br>
     <input type="submit" name="login" value="login">
 </form>
 
