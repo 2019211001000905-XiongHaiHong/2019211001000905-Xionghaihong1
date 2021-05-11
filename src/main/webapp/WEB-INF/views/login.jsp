@@ -1,41 +1,49 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 86159
-  Date: 2021/4/1
-  Time: 13:16
-  To change this template use File | Settings | File Templates.
---%>
-<%@include file="header.jsp"%>
-<h1 style="text-align: center;color: #788dad">login</h1>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="header.jsp" %>
+<section id="form"><!--form-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-1">
+                <div class="login-form"><!--login form-->
+                    <h2>Login to your account</h2>
+                    <%
+                        if (!(request.getAttribute("message") == null)) {
+                            out.println("<h2>" + request.getAttribute("message") + "</h2>");
+                        }
+                    %>
+                    <%
+                        Cookie[] cookies = request.getCookies();
+                        String Username = "";
+                        String Password = "";
+                        String rememberMe = "";
+                        if (cookies != null) {
+                            for (Cookie cookie : cookies) {
+                                if (cookie.getName().equals("cUsername")) {
+                                    Username = cookie.getValue();
+                                }
+                                if (cookie.getName().equals("cPassword")) {
+                                    Password = cookie.getValue();
+                                }
+                                if (cookie.getName().equals("cRememberMe")) {
+                                    rememberMe = cookie.getValue();
+                                }
+                            }
+                        }
+                        //update 5 user basepath
+                    %>
 
-<%
-    if (!(request.getAttribute("message")==null)) {
-        out.println(request.getAttribute("message"));
-    }
-%>
-<%
-    Cookie [] allcookies=request.getCookies();
-    String username="",password="",rememberMevale="";
-    if(allcookies!=null){
-        for(Cookie c:allcookies){
-            if(c.getName().equals("cUsername")){
-                username=c.getValue();
-            }
-            if(c.getName().equals("cPassword")){
-                password=c.getValue();
-            }
-            if(c.getName().equals("cRememberMevale")){
-                rememberMevale=c.getValue();
-            }
-        }
-    }
-%>
-
-<form style="text-align: center;background: deepskyblue" method="post" action="login">
-    username:<input type="text" name="username" value="<%=username%>" placeholder="username"></br></br>
-    password:<input type="password" name="password" value="<%=password%>" placeholder="password"></br></br>
-    <input type="checkbox" name="RememberMe" value="1"<%=rememberMevale.equals("1") ?"checked":""%>>RememberMe</br>
-    <input type="submit" name="login" value="login">
-</form>
-
-<%@include file="footer.jsp"%>
+                    <form method="post" action="<%=request.getContextPath()+"/login"%>">
+                        <input type="text" name="Username" placeholder="Username" value="<%=Username%>"><br>
+                        <input type="password" name="Password" placeholder="Password" value="<%=Password%>">
+                        <br/> <span>
+                        <input type="checkbox" class="checkbox" name="remember"
+                               value="1" <%="1".equals(rememberMe) ? "checked" : ""%>/> Keep me signed in</span>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                </div><!--/login form-->
+            </div>
+        </div>
+    </div>
+</section>
+<!--/form-->
+<%@include file="footer.jsp" %>
