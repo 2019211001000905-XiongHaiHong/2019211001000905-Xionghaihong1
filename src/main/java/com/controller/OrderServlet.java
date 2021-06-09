@@ -82,7 +82,7 @@ public class OrderServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<com.yinxingyu.model.Payment> paymentTypeList = Payment.findAllPayment(con);
+        List<com.model.Payment> paymentTypeList = Payment.findAllPayment(con);
         request.setAttribute("paymentTypeList", paymentTypeList);
         String path = "/WEB-INF/views/order.jsp";
         request.getRequestDispatcher(path).forward(request, response);
