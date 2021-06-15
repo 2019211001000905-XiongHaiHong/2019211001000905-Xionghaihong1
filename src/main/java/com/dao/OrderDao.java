@@ -1,22 +1,11 @@
 package com.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-
-
 import com.model.Item;
 import com.model.Order;
 import com.model.Product;
+
+import java.sql.*;
+import java.util.*;
 
 /**
  * A data access object (DAO) providing persistence and search support for Order
@@ -120,7 +109,7 @@ public class OrderDao implements IOrderDao {
             while (rs.next()) {
                 Order o = new Order();
                 o.setOrderId(rs.getInt("OrderID"));
-                o.setCustomerId(rs.getInt("CutomerId"));
+                o.setCustomerId(rs.getInt("CustomerId"));
                 o.setPaymentId(rs.getInt("PaymentID"));
                 o.setOrderDate(rs.getTimestamp("OrderDate"));
                 o.setFirstName(rs.getString("FirstName"));
@@ -133,7 +122,7 @@ public class OrderDao implements IOrderDao {
                 o.setCountry(rs.getString("Country"));
                 o.setPhone(rs.getString("Phone"));
                 o.setNotes(rs.getString("Notes"));
-                o.setOrderTotal(rs.getDouble("Order Total"));
+                o.setOrderTotal(rs.getDouble("OrderTotal"));
 
                 orderList.add(o);
             }
@@ -149,7 +138,7 @@ public class OrderDao implements IOrderDao {
 
     @Override
     public List<Order> findByUserId(Connection con, Object CustomerID) {
-        return findByProperty(con, "CutomerId", CustomerID);
+        return findByProperty(con, "CustomerId", CustomerID);
     }
 
     @Override
@@ -204,7 +193,7 @@ public class OrderDao implements IOrderDao {
 
     @Override
     public List<Order> findByOrderTotal(Connection con, Object orderTotal) {
-        return findByProperty(con, "Order Total", orderTotal);
+        return findByProperty(con, "OrderTotal", orderTotal);
     }
 
     @Override
@@ -219,7 +208,7 @@ public class OrderDao implements IOrderDao {
             while (rs.next()) {
                 Order o = new Order();
                 o.setOrderId(rs.getInt("OrderID"));
-                o.setCustomerId(rs.getInt("CutomerId"));
+                o.setCustomerId(rs.getInt("CustomerId"));
                 o.setPaymentId(rs.getInt("PaymentID"));
                 o.setOrderDate(rs.getTimestamp("OrderDate"));
                 o.setFirstName(rs.getString("FirstName"));
@@ -232,7 +221,7 @@ public class OrderDao implements IOrderDao {
                 o.setCountry(rs.getString("Country"));
                 o.setPhone(rs.getString("Phone"));
                 o.setNotes(rs.getString("Notes"));
-                o.setOrderTotal(rs.getDouble("Order Total"));
+                o.setOrderTotal(rs.getDouble("OrderTotal"));
 
                 orderList.add(o);
             }
